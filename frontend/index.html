@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Web3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>🚀 Hello Web3</h1>
+      <p class="hint">Hardhat local · MetaMask · ethers.js v5</p>
+
+      <section class="actions">
+        <button type="button" id="btn-connect">Connect Wallet</button>
+        <p id="wallet" class="output" aria-live="polite"></p>
+      </section>
+
+      <section id="section-site-network" class="actions" hidden>
+        <p class="actions-label">
+          Fluxo alternativo: o site chama <code>wallet_switchEthereumChain</code> (EIP-3326) e, se a
+          rede não existir, <code>wallet_addEthereumChain</code> (EIP-3085).
+        </p>
+        <button type="button" class="btn-secondary" id="btn-add-network">
+          Adicionar ou mudar para Hardhat local
+        </button>
+        <p id="network-status" class="output" aria-live="polite"></p>
+      </section>
+
+      <section class="actions">
+        <button type="button" id="btn-message" disabled>Get Message</button>
+        <p id="message" class="output" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <!-- Local (mesma origem): evita CDN bloqueada e global `ethers` faltar com SES/MetaMask -->
+    <script src="vendor/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
